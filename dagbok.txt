@@ -1,3 +1,4 @@
-25.4.2017: Viğ byrjuğum báğir á ağ skrifa alla hrútana í txt skjal. Viğ gerğum github geymslu sem átti ağ gera og byrjuğum ağeins á kóğanum.
-27.4.2017:  Héldum áfram meğ kóğann
-2.5.2017: Kláruğum ağ gera kóğann og laga villur
+25.4.2017: ViÃ° byrjuÃ°um bÃ¡Ã°ir Ã¡ aÃ° skrifa alla hrÃºtana Ã­ txt skjal. ViÃ° gerÃ°um github geymslu sem Ã¡tti aÃ° gera og byrjuÃ°um aÃ°eins Ã¡ kÃ³Ã°anum.
+27.4.2017:  HÃ©ldum Ã¡fram meÃ° kÃ³Ã°ann
+2.5.2017: KlÃ¡ruÃ°um aÃ° gera kÃ³Ã°ann og laga villur
+4.5.2017: CommentuÃ°um kÃ³Ã°ann og gerÃ°um README skrÃ¡nna. LÃ¶guÃ°um litlar villur Ã­ kÃ³Ã°anum og sÃ½ndum kennara. 
