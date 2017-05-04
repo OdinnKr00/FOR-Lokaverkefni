@@ -7,3 +7,7 @@ Leikreglur:
 
 Markmið spilsins er að ná öllum hrútunum af andstæðingnum.
 Hrútaspilin eru stokkuð og síðan deilt jafnt á tvo leikmenn. Hver leikmaður er með sinn stokk og sér efsta spilið sitt. Sá sem hefur þann hrút sem hefur hæstu einkunn fyrir tiltekinn flokk vinnur og fær efstu spil leikmanna. Ef tveir eru með sömu tölu eru hrútarnir lagðir í pott og næstu teknir eins fyrir. Þessu er haldið áfram þar til einn vinnur og fær hann þá alla hrútana í pottinum. 
+
+Verkefni: 
+
+Setja upp Hrútaspilið í gegnum forritun og láta það virka og líta vel út.
