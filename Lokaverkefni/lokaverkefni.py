@@ -5,7 +5,7 @@ leikmadur1 = []
 leikmadur2 = []
 jafntefli = []
 svar = 1
-skra = open("hrutarprufa.txt", "r")
+skra = open("hrutar.txt", "r")
 print("Hér eru öll spilin:")
 spil = skra.read().split("\n")
 skra.close()
@@ -16,6 +16,7 @@ for x in spil:
 print("")
 hve_oft = 1
 # Stokka spilin og bý til svo "bunka"random.shuffle(stokkur)
+random.shuffle(stokkur)
 for x in stokkur:
     if hve_oft % 2 == 0:
         leikmadur1.append(x)
@@ -27,25 +28,28 @@ for x in stokkur:
         print("Villa!")
 random.shuffle(leikmadur1)
 random.shuffle(leikmadur2)
-
+#Set upp loop sem spilin eru spiluð í 
 while svar == 1:
     for lota in range(1,10000):
-        if lota>1:
-            svar = input("Næsta lota? *ýttu á Enter* ")
+        #Ef einhver vinnur þá endar loop-ið
         if len(leikmadur1)==0:
             print("ÞÚ TAPAÐIR!")
             break
         elif len(leikmadur2)==0:
             print("ÞÚ VANNST!")
             break
+        if lota>1:
+            svar = input("Næsta lota? *ýttu á Enter* ")
         print("")
         print("Lota",lota,":")
+        #Finnum spilin sem er verið að nota í lotunni
         for x in leikmadur1:
             flokkar1 = x.split(" ")
             break
         for x in leikmadur2:
             flokkar2 = x.split(" ")
             break
+        #Sýnir alla flokka í spili notandans
         print("Það eru",len(leikmadur1),"spil í stokknum þínum og",len(leikmadur2),"spil í stokk leikmanns 2.")
         print("Þetta er hrúturinn þinn í þessari lotu:")
         print("Nafn:",flokkar1[0])
@@ -57,30 +61,33 @@ while svar == 1:
         print("6: Frjosemi =",flokkar1[6])
         print("7: Gerð/Þykkt bakvöðva =",flokkar1[7])
         print("8: Einkunn fyrir malir =",flokkar1[8])
+        #Til þess að fyrst gerir þú og síðan talvan, til þess notuðum við oddatölu aðferðina
         if lota%2!=0:
             print("Þú velur flokk!")
-
             val = int(input("Hvaða flokk viltu nota? 1, 2, 3, 4, 5, 6, 7 eða 8 "))
         else:
             print("Leikmaður 2 velur flokk!")
             val=random.randint(1,8)
             print("Leikmaður 2 valdi flokk nr.",val)
         print("")
+        #Notum valið fyrir ofan til að finna út hvaða spil vinnur
         if float(flokkar1[val]) > float(flokkar2[val]):
-            print("Þú vannst,", flokkar2[0], "fer neðst í stokkinn þinn!")
+            print("Þú vannst,", flokkar1[0],"og",flokkar2[0], "fer neðst í stokkinn þinn!")
             print(flokkar1[0], "vann með", flokkar1[val], "á móti", flokkar2[0], "sem var með", flokkar2[val])
+            #Ef spil eru í jafnteflis listanum, bætir þeim í lista leikmanns
             if len(jafntefli) > 0:
                 print("Þú fékkst líka", jafntefli)
                 for j in range(len(jafntefli)):
                     print(jafntefli[j])
                     leikmadur1.append(jafntefli[j])
                 list.clear(jafntefli)
+            #Breytum listanum í string og setjum hann aftast í lista leikmanns
             flokkar1 = " ".join(flokkar1)
             flokkar2 = " ".join(flokkar2)
             leikmadur1.append(flokkar1)
             leikmadur1.append(flokkar2)
         elif float(flokkar1[val]) < float(flokkar2[val]):
-            print("Leikmaður 2 vann,", flokkar1[0], "fer neðst í stokkinn hans!")
+            print("Leikmaður 2 vann,", flokkar1[0],"og",flokkar2[0],  "fer neðst í stokkinn hans!")
             print(flokkar2[0], "vann með", flokkar2[val], "á móti", flokkar1[0], "sem var með", flokkar1[val])
             if len(jafntefli) > 0:
                 print("Leikmaður 2 fékk líka:")
@@ -93,11 +100,13 @@ while svar == 1:
             leikmadur2.append(flokkar1)
             leikmadur2.append(flokkar2)
         elif float(flokkar1[val]) == float(flokkar2[val]):
+            #Ef það er jafntefli breytir spilunum í string og lætur þau í jafnteflis listann
             print("Jafntefli!", flokkar1[0], "og", flokkar2[0], "voru með jafnmikið.")
             flokkar1 = " ".join(flokkar1)
             flokkar2 = " ".join(flokkar2)
             jafntefli.append(flokkar1)
             jafntefli.append(flokkar2)
+        #Tekur spilin af toppnum á listanum
         del leikmadur1[0]
         del leikmadur2[0]
         print("Spilin í pottinum:",jafntefli)
